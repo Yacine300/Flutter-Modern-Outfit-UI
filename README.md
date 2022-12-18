@@ -1,6 +1,6 @@
 # four
 
-A new Flutter project.
+A Outfit Flutter UI application  
 
 ## Getting Started
 
