@@ -30,7 +30,7 @@ class Products with ChangeNotifier {
           "assets/images/sunglasses.jpeg",
           "assets/images/sunglasses.jpeg"
         ],
-        subTitle: "Hat from Vuiton",
+        subTitle: "Sunglasses from Vuiton",
         descreption:
             'orem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque facilisis volutpat ipsum, in molestie neque sodales sit amet. Maecenas volutpat fermentum ligula quis rutrumssa.',
         isLicked: false),
@@ -43,7 +43,7 @@ class Products with ChangeNotifier {
           "assets/images/intro.jpeg",
           "assets/images/intro.jpeg"
         ],
-        subTitle: "Hat from H&M",
+        subTitle: "outfit from H&M",
         descreption:
             'orem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque facilisis volutpat ipsum, in molestie neque sodales sit amet. Maecenas volutpat fermentum ligula quis rutrumssa.',
         isLicked: false),

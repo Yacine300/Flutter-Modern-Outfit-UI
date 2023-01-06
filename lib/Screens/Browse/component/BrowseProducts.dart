@@ -3,7 +3,6 @@ import 'package:four/Composant/SizeConfiguration.dart';
 import 'package:four/Providers/Products.dart';
 import 'package:provider/provider.dart';
 
-import 'BrowseBody.dart';
 import 'OneItem.dart';
 
 class BrowseProducts extends StatelessWidget {

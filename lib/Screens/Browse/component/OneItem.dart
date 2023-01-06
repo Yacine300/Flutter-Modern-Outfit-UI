@@ -80,7 +80,8 @@ class _OneItemState extends State<OneItem> {
                       ),
                       Text(
                         subTitle,
-                        style: TextStyle(fontWeight: FontWeight.w300),
+                        style:
+                            TextStyle(fontWeight: FontWeight.w300, fontSize: 8),
                       ),
                       const SizedBox(
                         height: 10,
