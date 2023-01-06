@@ -4,7 +4,7 @@ List<Map<String, String>> dummyData = [
     'image': 'assets/images/Hats2.jpeg'
   },
   {
-    'title': 'With cornucopia the style is your',
+    'title': 'With cornucopia the style is yours',
     'image': 'assets/images/Hats.jpeg'
   },
   {
