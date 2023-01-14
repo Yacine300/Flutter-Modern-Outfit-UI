@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:four/Composant/enum.dart';
+import 'package:four/Screens/AddItem/add_item_screen.dart';
 import 'package:four/Screens/Cart/Cart.dart';
 
 import 'component/BrowseBody.dart';
@@ -10,7 +11,7 @@ class Browse extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: browseAppbar(),
+      appBar: browseAppbar(context),
       body: BrowseBody(),
       bottomNavigationBar: CustomBottomNavBar(
         selectedMenu: MenuState.home,
@@ -18,7 +19,7 @@ class Browse extends StatelessWidget {
     );
   }
 
-  AppBar browseAppbar() {
+  AppBar browseAppbar(BuildContext ctx) {
     return AppBar(
       elevation: 0,
       backgroundColor: Colors.grey[50],
@@ -27,9 +28,9 @@ class Browse extends StatelessWidget {
       ),
       actions: [
         IconButton(
-            onPressed: () {},
+            onPressed: () => Navigator.pushNamed(ctx, AddItem.routeName),
             icon: Icon(
-              Icons.search,
+              Icons.add,
               color: Colors.black87,
             )),
         IconButton(

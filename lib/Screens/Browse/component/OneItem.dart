@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -5,9 +7,10 @@ import 'package:four/Composant/SizeConfiguration.dart';
 import 'package:four/Screens/Details/Detail.dart';
 
 class OneItem extends StatefulWidget {
-  final String id, image, mark, subTitle;
+  final String id, mark, subTitle;
+  final File image;
   final double price;
-  final bool isLicked;
+  final int isLicked;
 
   const OneItem(
       {this.id,
@@ -27,9 +30,10 @@ class OneItem extends StatefulWidget {
 }
 
 class _OneItemState extends State<OneItem> {
-  final String id, image, mark, subTitle;
+  final String id, mark, subTitle;
+  final File image;
   final double price;
-  bool isLicked;
+  int isLicked;
 
   _OneItemState(
       {this.id,
@@ -58,7 +62,7 @@ class _OneItemState extends State<OneItem> {
               Expanded(
                 child: AspectRatio(
                   aspectRatio: 2,
-                  child: Image.asset(
+                  child: Image.file(
                     image,
                     fit: BoxFit.cover,
                   ),
@@ -98,12 +102,16 @@ class _OneItemState extends State<OneItem> {
                           const Spacer(),
                           GestureDetector(
                             onTap: () => setState(() {
-                              isLicked = !isLicked;
+                              if (isLicked == 0) {
+                                isLicked = 1;
+                              } else {
+                                isLicked = 0;
+                              }
                             }),
                             child: Container(
                               height: SizeConfiguration.defaultSize / 4,
                               width: SizeConfiguration.defaultSize / 4,
-                              child: isLicked
+                              child: isLicked == 1
                                   ? SvgPicture.asset(
                                       "assets/icons/galb_plein.svg",
                                       fit: BoxFit.cover,

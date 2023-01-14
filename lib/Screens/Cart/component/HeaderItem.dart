@@ -12,7 +12,7 @@ class HeaderItem extends StatelessWidget {
     return Container(
       height: SizeConfiguration.defaultSize * 1.2,
       width: SizeConfiguration.defaultSize * 1.2,
-      child: Image.asset(
+      child: Image.file(
         dummyOneProduct.image.first,
         fit: BoxFit.cover,
       ),

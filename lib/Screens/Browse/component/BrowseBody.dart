@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
 import 'package:four/Composant/SizeConfiguration.dart';
+import 'package:four/Providers/Products.dart';
 
 import 'package:four/Screens/Browse/component/BrowseProducts.dart';
 import 'package:four/Screens/Browse/component/IntroAndDate.dart';
 import 'package:four/Screens/Browse/component/Pub.dart';
+import 'package:provider/provider.dart';
 
 import 'CategorieData.dart';
 
@@ -19,41 +21,43 @@ class _BrowseBodyState extends State<BrowseBody> {
   @override
   Widget build(BuildContext context) {
     SizeConfiguration().init(context);
-    return SingleChildScrollView(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const IntroAndDate(),
-          Padding(
-              padding: EdgeInsets.symmetric(
-                  vertical: SizeConfiguration.defaultSize / 6,
-                  horizontal: SizeConfiguration.defaultSize / 4),
-              child: const Pub()),
-          Container(
-            height: SizeConfiguration.defaultSize / 2,
-            child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: menuCategorie.length,
-                itemBuilder: (context, index) => Padding(
-                      padding: EdgeInsets.only(
-                          left: SizeConfiguration.defaultSize / 3,
-                          top: 10,
-                          bottom: 5),
-                      child: menu(index: index),
-                    )),
-          ),
-          SizedBox(
-            height: SizeConfiguration.defaultSize / 5,
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: SizeConfiguration.defaultSize / 4,
-            ),
-            child: const BrowseProducts(),
-          )
-        ],
-      ),
-    );
+    return FutureBuilder(
+        future: Provider.of<Products>(context).fetchAnsSetsProducts(),
+        builder: (context, snapshot) => SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const IntroAndDate(),
+                  Padding(
+                      padding: EdgeInsets.symmetric(
+                          vertical: SizeConfiguration.defaultSize / 6,
+                          horizontal: SizeConfiguration.defaultSize / 4),
+                      child: const Pub()),
+                  Container(
+                    height: SizeConfiguration.defaultSize / 2,
+                    child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: menuCategorie.length,
+                        itemBuilder: (context, index) => Padding(
+                              padding: EdgeInsets.only(
+                                  left: SizeConfiguration.defaultSize / 3,
+                                  top: 10,
+                                  bottom: 5),
+                              child: menu(index: index),
+                            )),
+                  ),
+                  SizedBox(
+                    height: SizeConfiguration.defaultSize / 5,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: SizeConfiguration.defaultSize / 4,
+                    ),
+                    child: const BrowseProducts(),
+                  )
+                ],
+              ),
+            ));
   }
 
   Widget buildDot({index}) {

@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:four/Composant/SizeConfiguration.dart';
 import 'package:four/Providers/Products.dart';
 import 'package:four/Screens/Details/component/InfoDetailBody.dart';
+import 'package:four/Screens/UpdateItem/update_item_screen.dart';
+
 import 'package:four/models/Product.dart';
 import 'package:provider/provider.dart';
 
@@ -33,7 +35,7 @@ class _DetailBodyState extends State<DetailBody> {
                 child: PageView.builder(
                   scrollDirection: Axis.vertical,
                   itemCount: _targetProduct.image.length,
-                  itemBuilder: (context, index) => Image.asset(
+                  itemBuilder: (context, index) => Image.file(
                     _targetProduct.image[index],
                     fit: BoxFit.cover,
                   ),
@@ -47,6 +49,22 @@ class _DetailBodyState extends State<DetailBody> {
                 child: AppBar(
               elevation: 0,
               backgroundColor: Colors.transparent,
+              actions: [
+                IconButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => UpdateItemScreen(
+                                  id: id,
+                                )),
+                      );
+                    },
+                    icon: Icon(
+                      Icons.edit,
+                      color: Colors.black,
+                    )),
+              ],
               leading: const BackButton(
                 color: Colors.black,
               ),
