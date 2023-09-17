@@ -4,7 +4,7 @@ An Outfit Flutter UI application with multiple versions , backend added
 
 ## ScreenShots
 
-![Image Alt Text](https://i.pinimg.com/564x/ce/e6/b3/cee6b3207b6a1949acac53a64f866d5e.jpg)
+![Image Alt Text](https://mail.google.com/mail/u/0?ui=2&ik=6cd9c900a2&attid=0.1&permmsgid=msg-a:r-2380344643450491215&th=18aa37a765d67024&view=att&disp=safe&realattid=18aa37a5ac0be1ccf92)
 
 
 
